@@ -17,7 +17,7 @@ w6=[];
 for i=linspace(1,361,361)
     temp=pinv([ CD*cos(T(4,i)) -DO6*cos(T(5,i)) ;...
         -CD*sin(T(4,i)) DO6*sin(T(5,i)) ])*...
-        [-CB*cos(T(2,i))*w3(i);O2A*sin(T(1,i))*w2(i)+AC*sin(T(3,i))*w4(i)];
+        [-O2A*cos(T(1,i))*w2(i)-AC*cos(T(3,i))*w4(i);O2A*sin(T(1,i))*w2(i)+AC*sin(T(3,i))*w4(i)];
     w5=[w5 temp(1)];
     w6=[w6 temp(2)];
 end

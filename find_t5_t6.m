@@ -11,10 +11,10 @@ CD=L(5);
 DO6=L(6);
 O2B=L(7);
 O2O6=L(8);
-
+%+AC*sin(t4)+O2A*sin(t2)
 t5=guess(1);t6=guess(2);
 D_t= -pinv([CD*cos(t5) -DO6*cos(t6); -CD*sin(t5) DO6*sin(t6)])*...
-    [CD*sin(t5)-DO6*sin(t6)-O2B+CB*sin(t3);...
+    [CD*sin(t5)-DO6*sin(t6)+AC*sin(t4)+O2A*sin(t2);...
     CD*cos(t5)-DO6*cos(t6)-O2O6+O2A*cos(t2)+AC*cos(t4)];
 guess=guess+D_t;
 
@@ -23,7 +23,7 @@ while (~(abs(D_t(1))< 0.00001 && abs(D_t(2))<0.00001))
     t5=guess(1);t6=guess(2);
 
     D_t= -pinv([CD*cos(t5) -DO6*cos(t6); -CD*sin(t5) DO6*sin(t6)])*...
-    [CD*sin(t5)-DO6*sin(t6)-O2B+CB*sin(t3);...
+    [CD*sin(t5)-DO6*sin(t6)+AC*sin(t4)+O2A*sin(t2);...
     CD*cos(t5)-DO6*cos(t6)-O2O6+O2A*cos(t2)+AC*cos(t4)];
     guess=guess+D_t;
 
